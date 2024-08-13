@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-from dotenv import load_dotenv #agregado
-load_dotenv() #agregado
-from os import environ, path #agregado  
+from dotenv import load_dotenv 
+load_dotenv() 
+from os import environ, path 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = environ.get('DJANGO_SECRET_KEY') #modificado
+SECRET_KEY = environ.get('DJANGO_SECRET_KEY') 
 
-WSGI_APPLICATION = 'python_heroku_task.wsgi.app' #agregado
+WSGI_APPLICATION = 'python_heroku_task.wsgi.app'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'python_heroku_task.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres', #modificado
-        'USER': environ.get('SUPABASE_USER'), #modificado en .env
-        'PASSWORD': environ.get('SUPABASE_PASSWORD'),#modificado en .env
-        'HOST': environ.get('SUPABASE_HOST'),#modificado en .env
-        'PORT': '5432',
+        'NAME': 'postgres',
+        'USER': environ.get('SUPABASE_USER'), 
+        'PASSWORD': environ.get('SUPABASE_PASSWORD'),
+        'HOST': environ.get('SUPABASE_HOST'),
+        'PORT': '6543',
         'OPTIONS': {
 			'sslmode': 'verify-full',
 			'sslrootcert': path.join(BASE_DIR, 'prod-ca-2021.crt')
